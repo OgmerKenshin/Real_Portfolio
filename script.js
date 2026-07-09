@@ -129,3 +129,32 @@ document.addEventListener("DOMContentLoaded", () => {
     lastScrollTop = currentScroll;
   });
 });
+
+// ==========================================================================
+  // Hook 3: Underwater Ascent (Intersection Observer)
+  // ==========================================================================
+  const scrollElements = document.querySelectorAll(".about, .portfolio-section");
+
+  const elementOptions = {
+    root: null,         // Uses the device viewport as the tracking box
+    threshold: 0.12,    // Triggers when 12% of the element is visible
+    rootMargin: "0px 0px -40px 0px" // Slightly delays entry for a heavier fluid look
+  };
+
+  const elementObserver = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        // Adds the surface class to smoothly float the element up
+        entry.target.classList.add("surface");
+        
+        // Unobserves the element if you only want the animation to play once
+        // observer.unobserve(entry.target); 
+      } else {
+        // Optional: Remove this 'else' block if you don't want them to sink down again when scrolling up
+        entry.target.classList.remove("surface");
+      }
+    });
+  }, elementOptions);
+
+  // Bind all targets to the tracking loop
+  scrollElements.forEach(el => elementObserver.observe(el));
