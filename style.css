@@ -209,6 +209,28 @@ nav .logo span {
 }
 
 /* Projects Vertical Stack */
+/* Container to group the project card and its download action button together */
+.project-card-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px; /* Creates clean spacing between the card bottom and your button */
+  width: 100%;
+  max-width: 620px;
+}
+
+/* Custom styling adjusting button sizing for the portfolio stack grid layout */
+.project-download-btn {
+  font-size: 0.9rem;
+  padding: 10px 24px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  background-color: var(--panel-bg);
+  /* Pulls in your intensive glow rule configuration */
+  text-shadow: 
+    0 0 3px var(--accent-red),
+    0 0 8px rgba(255, 0, 0, 0.5);
+}
 .projects-vertical-stack {
   display: flex;
   flex-direction: column;
@@ -359,8 +381,8 @@ nav .logo span {
 .section-badge {
   text-shadow: 
     0 0 5px var(--accent-red),
-    0 0 10px var(--accent-red),
-    0 0 20px rgba(255, 0, 0, 0.6);
+    0 0 0px var(--accent-red),
+    0 0 0px rgba(255, 0, 0, 0.6);
 }
 
 /* Crisp glow for your profile name tag */
@@ -377,7 +399,7 @@ nav .logo span {
 .tool-label {
   text-shadow: 
     0 0 3px var(--accent-red),
-    0 0 8px rgba(255, 0, 0, 0.5);
+    0 0 5px rgba(255, 0, 0, 0.5);
 }
 
 /* Optional: Make the text glow brighter when hovering over interactive elements */
@@ -389,4 +411,53 @@ nav .logo span {
     0 0 15px var(--accent-red),
     0 0 25px rgba(255, 0, 0, 0.8);
   transition: text-shadow 0.2s ease;
+}
+
+/* ==========================================================================
+   5. Interactive Additions (Slashes & Mobile Dropdown)
+   ========================================================================== */
+
+/* Locks the slash canvas firmly behind all text/images */
+#slash-canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1; /* Placed deep behind your glowing content */
+  pointer-events: none; /* Allows scrolling and clicks to pass straight through */
+}
+
+/* Enhances your existing dropdown class to support the active toggle state */
+.dropdown {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.98);
+  z-index: 2000;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+/* Triggered via JS to seamlessly open the mobile menu */
+.dropdown.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* Formats the cancel button inside your mobile menu layout */
+.dropdown .cancel {
+  position: absolute;
+  top: 25px;
+  right: 40px;
+  font-size: 1.8rem;
+  color: var(--accent-red);
+  cursor: pointer;
 }

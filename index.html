@@ -12,7 +12,7 @@
   <!-- Initial Title Screen -->
   <section id="title-screen" class="title-screen">
     <h1>Welcome to Kenshin's Portfolio Website</h1>
-    <p>Scroll down to explore more...</p>
+    <p>Scroll down to explore...</p>
   </section>
 
   <!-- Sticky Desktop Navigation / Mobile Header -->
@@ -44,9 +44,9 @@
   <section id="about" class="about">
     <div class="hero-container">
       <div class="hero-text">
-        <h1 class="hero-title">‘sup man</h1>
+        <h1 class="hero-title">Introduction</h1>
         <p class="hero-subtitle">Aspiring Software Engineer taking up Computer Engineering at PUP Manila. I make websites, games, you name it.</p>
-        <p class="hero-extra">some other text</p>
+        <p class="hero-extra">I also build PCs for fun!</p>
         <div class="hero-actions">
           <!-- URL-encoded link to handle the comma and space safely -->
           <a href="Ogmer%2C%20Kenshin_Resume.pdf" download="Ogmer_Kenshin_Resume.pdf" class="btn-download">Download my resume!</a>
@@ -78,8 +78,13 @@
       </div>
       
       <!-- Project 2: Deadlock Terminal -->
-      <div class="project-card">
-        <img src="os.png" alt="Deadlock Terminal" class="project-image">
+      <div class="project-card-container">
+        <div class="project-card">
+          <img src="os.png" alt="Deadlock Terminal" class="project-image">
+        </div>
+        <div class="project-actions">
+          <a href="deadlock.exe" class="btn-download project-download-btn">Download one of our Projects!</a>
+        </div>
       </div>
       
       <!-- Project 3: PUP Chika Web App -->
@@ -189,3 +194,9 @@
 
 </body>
 </html>
+
+<!-- Background Canvas for Sukuna's Slashes -->
+  <canvas id="slash-canvas"></canvas>
+
+  <script src="script.js"></script>
+</body>
