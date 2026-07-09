@@ -21,6 +21,8 @@ html {
   background-color: var(--bg-color);
   font-family: var(--font-base);
   color: var(--accent-red);
+  /* Adds a subtle, ambient red glow to all basic text */
+  text-shadow: 0 0 4px rgba(255, 0, 0, 0.4);
 }
 
 /* ==========================================================================
@@ -345,4 +347,46 @@ nav .logo span {
   .contact-asymmetric-stack {
     padding-right: 0;
   }
+}
+
+/* ==========================================================================
+   Glow Intensifiers 
+   ========================================================================== */
+
+/* Intense glow for main titles and section headings */
+.title-screen h1,
+.hero-title,
+.section-badge {
+  text-shadow: 
+    0 0 5px var(--accent-red),
+    0 0 10px var(--accent-red),
+    0 0 20px rgba(255, 0, 0, 0.6);
+}
+
+/* Crisp glow for your profile name tag */
+.profile-name-tag {
+  text-shadow: 
+    0 0 4px var(--accent-red),
+    0 0 12px rgba(255, 0, 0, 0.5);
+}
+
+/* Sharp glow for text inside links, navigation menu, and download buttons */
+.links a,
+.btn-download,
+.contact-text,
+.tool-label {
+  text-shadow: 
+    0 0 3px var(--accent-red),
+    0 0 8px rgba(255, 0, 0, 0.5);
+}
+
+/* Optional: Make the text glow brighter when hovering over interactive elements */
+.links a:hover,
+.btn-download:hover,
+.contact-link:hover .contact-text {
+  text-shadow: 
+    0 0 6px var(--accent-red),
+    0 0 15px var(--accent-red),
+    0 0 25px rgba(255, 0, 0, 0.8);
+  transition: text-shadow 0.2s ease;
 }
