@@ -8,43 +8,183 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<!--This is for the initial title screen-->
+
+  <!-- Initial Title Screen -->
   <section id="title-screen" class="title-screen">
     <h1>Welcome to Kenshin's Portfolio Website</h1>
     <p>Scroll down to explore more...</p>
   </section>
 
-  <!-- Home Section -->
-  <section id="about" class="about">
-    <h2>About Me</h2>
-    <p>Aspiring Software Engineer taking up Computer Engineering at PUP Manila. I make websites, games, you name it.</p>
-  </section>
-
-
+  <!-- Sticky Desktop Navigation / Mobile Header -->
   <nav>
     <div class="logo">
-         Kenshin's <span>Portfolio</span>
-        </div>
-        <div class="nac-container">
-            <div class="links">
-                <a href="">Home</a>
-                <a href="">projects</a>
-                <a href="">Skills</a>
-                <a href="">contacts</a>
-            </div>
-        </div>
-        <i class="fa-solid fa-bars hamburg"></i>
-        <div class="dropdown">
-            <div class="links">
-                <a href="">Home</a>
-                <a href="">projects</a>
-                <a href="">Skills</a>
-                <a href="">contacts</a>
-                <i class="fa-solid fa-x cancel"></i>
-            </div>
-        </div>
-
+      Kenshin's <span>Portfolio</span>
+    </div>
+    <div class="nav-container"> <!-- Fixed 'nac-container' typo here -->
+      <div class="links">
+        <a href="#about">Home</a>
+        <a href="#projects">projects</a>
+        <a href="#skills">Skills</a>
+        <a href="#contacts">contacts</a>
+      </div>
+    </div>
+    <i class="fa-solid fa-bars hamburg"></i>
+    <div class="dropdown">
+      <div class="links">
+        <a href="#about">Home</a>
+        <a href="#projects">projects</a>
+        <a href="#skills">Skills</a>
+        <a href="#contacts">contacts</a>
+        <i class="fa-solid fa-x cancel"></i>
+      </div>
+    </div>
   </nav>
-  <!-- projects,skills tas contact pa oh man -->
+
+  <!-- Home / About Section -->
+  <section id="about" class="about">
+    <div class="hero-container">
+      <div class="hero-text">
+        <h1 class="hero-title">‘sup man</h1>
+        <p class="hero-subtitle">Aspiring Software Engineer taking up Computer Engineering at PUP Manila. I make websites, games, you name it.</p>
+        <p class="hero-extra">some other text</p>
+        <div class="hero-actions">
+          <a href="#" class="btn-download">Download my resume!</a>
+        </div>
+      </div>
+      
+      <div class="hero-profile">
+        <div class="profile-card">
+          <!-- Replace with your actual profile picture file name -->
+          <img src="pogi.png" alt="Kenshin A. Ogmer" class="profile-img">
+        </div>
+        <div class="profile-name-tag">
+          KENSHIN A. OGMER
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects Section -->
+  <section id="projects" class="portfolio-section">
+    <div class="badge-container">
+      <span class="section-badge">PROJECTS</span>
+    </div>
+    
+    <div class="projects-vertical-stack">
+      <!-- Project 1: Castle Clashers -->
+      <div class="project-card">
+        <img src="roblox.png" alt="Castle Clashers" class="project-image">
+      </div>
+      
+      <!-- Project 2: Deadlock Terminal -->
+      <div class="project-card">
+        <img src="os.png" alt="Deadlock Terminal" class="project-image">
+      </div>
+      
+      <!-- Project 3: PUP Chika Web App -->
+      <div class="project-card small-card">
+        <img src="pupchika.png" alt="PUP Chika" class="project-image">
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills / Tools Section -->
+  <section id="skills" class="portfolio-section">
+    <div class="badge-container">
+      <span class="section-badge">TOOLS</span>
+    </div>
+    
+    <div class="tools-grid">
+      <!-- 12 Nodes mapped out for grid mapping via Font Awesome / Devicons later -->
+      <div class="tool-node">
+        <i class="fa-brands fa-html5"></i>
+        <span>HTML</span>
+      </div>
+      <div class="tool-node">
+        <i class="fa-brands fa-css3-alt"></i>
+        <span>CSS</span>
+      </div>
+      <div class="tool-node">
+        <i class="fa-brands fa-js"></i>
+        <span>JavaScript</span>
+      </div>
+      <div class="tool-node">
+        <i class="fa-brands fa-node-js"></i>
+        <span>Node.js</span>
+      </div>
+      <div class="tool-node">
+        <i class="fa-brands fa-java"></i>
+        <span>Java</span>
+      </div>
+      <div class="tool-node">
+        <i class="fa-brands fa-figma"></i>
+        <span>Figma</span>
+      </div>
+      <div class="tool-node">
+        <i class="fa-brands fa-python"></i>
+        <span>Python</span>
+      </div>
+      <div class="tool-node">
+        <i class="fa-brands fa-square-git"></i>
+        <span>Git</span>
+      </div>
+      <div class="tool-node">
+        <i class="fa-brands fa-docker"></i>
+        <span>Docker</span>
+      </div>
+      <div class="tool-node">
+        <i class="fa-solid fa-database"></i>
+        <span>Database</span>
+      </div>
+      <div class="tool-node">
+        <i class="fa-brands fa-aws"></i>
+        <span>AWS</span>
+      </div>
+      <div class="tool-node">
+        <i class="fa-solid fa-file-excel"></i>
+        <span>Excel</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contacts Section -->
+  <section id="contacts" class="portfolio-section contact-section">
+    <div class="badge-container">
+      <span class="section-badge interactive-badge">Contact me!</span>
+    </div>
+    
+    <div class="contact-asymmetric-stack">
+      <!-- GitHub -->
+      <a href="https://github.com/OgmerKenshin" target="_blank" class="contact-link">
+        <i class="fa-brands fa-github"></i>
+        <span class="contact-text">OgmerKenshin</span>
+      </a>
+
+      <!-- Facebook -->
+      <a href="https://www.facebook.com/kenshin.ogmer.2025" target="_blank" class="contact-link">
+        <i class="fa-brands fa-facebook"></i>
+        <span class="contact-text">Kenshin Ogmer</span>
+      </a>
+
+      <!-- LinkedIn -->
+      <a href="https://www.linkedin.com/in/kenshin-ogmer-725167354/" target="_blank" class="contact-link">
+        <i class="fa-brands fa-linkedin"></i>
+        <span class="contact-text">Kenshin Ogmer</span>
+      </a>
+
+      <!-- Gmail -->
+      <a href="mailto:kenshinaogmer@gmail.com" class="contact-link">
+        <i class="fa-solid fa-at"></i>
+        <span class="contact-text">kenshinaogmer@gmail.com</span>
+      </a>
+
+      <!-- Viber / Phone Number -->
+      <a href="viber://chat?number=09671328737" class="contact-link">
+        <i class="fa-brands fa-viber"></i>
+        <span class="contact-text">+63 967 132 8737</span>
+      </a>
+    </div>
+  </section>
+
 </body>
 </html>

@@ -1,0 +1,348 @@
+/* ==========================================================================
+   1. Theme Configuration & Core Resets
+   ========================================================================== */
+:root {
+  --bg-color: #000000;
+  --accent-red: #ff0000;
+  --muted-red: #8b0000;
+  --panel-bg: #111111;
+  --icon-purple: #a29bfe;
+  --font-base: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  background-color: var(--bg-color);
+  font-family: var(--font-base);
+  color: var(--accent-red);
+}
+
+/* ==========================================================================
+   2. Existing Setup & Navigation Styling
+   ========================================================================== */
+.title-screen {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  border-bottom: 2px solid var(--accent-red);
+}
+
+.title-screen h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+nav {
+  position: sticky;
+  top: 0;
+  background-color: rgba(0, 0, 0, 0.95);
+  border-bottom: 2px solid var(--accent-red);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 40px;
+  z-index: 1000;
+}
+
+nav .logo {
+  font-weight: bold;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+}
+
+nav .logo span {
+  color: #fff;
+}
+
+.links a {
+  color: var(--accent-red);
+  text-decoration: none;
+  margin-left: 20px;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+  font-weight: 600;
+  transition: opacity 0.2s;
+}
+
+.links a:hover {
+  opacity: 0.7;
+}
+
+/* Mobile Hamburger Menu Elements */
+.hamburg {
+  display: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.dropdown {
+  display: none; /* JS tracking property hook */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: var(--bg-color);
+  z-index: 2000;
+}
+
+/* ==========================================================================
+   3. Content Blocks & Layout Visuals
+   ========================================================================== */
+.portfolio-section {
+  padding: 80px 20px;
+  border-bottom: 2px solid var(--accent-red);
+  min-height: 80vh;
+}
+
+/* Red Structural Section Badges */
+.badge-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 60px;
+}
+
+.section-badge {
+  display: inline-block;
+  padding: 12px 45px;
+  border: 2px solid var(--accent-red);
+  border-radius: 6px;
+  background-color: var(--panel-bg);
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+
+/* About / Hero Core Structure */
+.about {
+  padding: 100px 40px;
+  border-bottom: 2px solid var(--accent-red);
+  min-height: 90vh;
+  display: flex;
+  align-items: center;
+}
+
+.hero-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 50px;
+  align-items: center;
+  width: 100%;
+}
+
+.hero-title {
+  font-size: 4rem;
+  font-weight: 900;
+  margin-bottom: 20px;
+}
+
+.hero-subtitle {
+  font-size: 1.15rem;
+  line-height: 1.6;
+  margin-bottom: 25px;
+}
+
+.hero-extra {
+  font-size: 1rem;
+  color: var(--muted-red);
+  margin-bottom: 35px;
+}
+
+.btn-download {
+  display: inline-block;
+  padding: 12px 28px;
+  border: 2px solid var(--accent-red);
+  border-radius: 8px;
+  color: var(--accent-red);
+  text-decoration: none;
+  font-weight: bold;
+  transition: background 0.2s, transform 0.2s;
+}
+
+.btn-download:hover {
+  background-color: rgba(255, 0, 0, 0.1);
+  transform: translateY(-2px);
+}
+
+/* Hero Right Side Profile Element */
+.hero-profile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.profile-card {
+  width: 250px;
+  height: 290px;
+  border-radius: 20px;
+  overflow: hidden;
+  border: 2px solid var(--accent-red);
+}
+
+.profile-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.profile-name-tag {
+  border: 2px solid var(--accent-red);
+  padding: 10px 25px;
+  border-radius: 6px;
+  font-weight: bold;
+  text-align: center;
+  width: 250px;
+  letter-spacing: 1px;
+}
+
+/* Projects Vertical Stack */
+.projects-vertical-stack {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.project-card {
+  width: 100%;
+  max-width: 620px;
+  border: 1px solid rgba(255, 0, 0, 0.2);
+  display: flex;
+}
+
+.project-image {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Special size constraints matching the PUP Chika layout dimensions */
+.small-card {
+  max-width: 320px;
+}
+
+/* Tools / Skills Grid Config */
+.tools-grid {
+  max-width: 550px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 45px 20px;
+  justify-items: center;
+}
+
+.tool-node {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;              /* Creates clean spacing between the icon and the text */
+  font-size: 1.8rem;     /* Keeps your icon size exactly how it was */
+  color: #ff0000; /* Or your red color, whichever theme color you prefer */
+  transition: transform 0.2s;
+  text-align: center;
+}
+
+/* Style for the new label text underneath */
+.tool-node span {
+  font-size: 0.75rem;    /* Makes the text small and clean */
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  color: var(--accent-red); /* Matches your project's primary red theme */
+}
+
+.tool-node:hover {
+  transform: scale(1.15);
+}
+
+/* Contact Asymmetrical Block Layout */
+.contact-section {
+  min-height: 60vh;
+}
+
+.interactive-badge {
+  background-color: var(--panel-bg);
+  cursor: pointer;
+}
+
+.contact-asymmetric-stack {
+  max-width: 320px; 
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* Aligns items neatly to the left edge of the stack */
+  gap: 25px;
+  padding-left: 40px;      /* Slight indent balancing to keep it visually striking */
+}
+
+.contact-text {
+  font-size: 0.95rem;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  color: #fff;            /* Bright white text so the red icons pop beautifully */
+}
+
+.contact-link {
+  display: flex;
+  align-items: center;    /* Centers the icon and text vertically on the same line */
+  gap: 15px;              /* Gap between the icon and your text link */
+  font-size: 1.6rem;
+  color: var(--accent-red);
+  text-decoration: none;
+  transition: transform 0.2s, opacity 0.2s;
+}
+
+.contact-link:hover {
+  transform: translateX(5px); /* Soft right-glide animation on hover */
+  opacity: 0.8;
+}
+
+@media (max-width: 768px) {
+  .contact-asymmetric-stack {
+    max-width: max-content;
+    padding-left: 0;
+  }
+}
+
+/* ==========================================================================
+   4. Media Queries for Mobile Responsiveness
+   ========================================================================== */
+@media (max-width: 768px) {
+  nav .nav-container {
+    display: none; /* Hide desktop link strip */
+  }
+  
+  .hamburg {
+    display: block; /* Unlocks visibility toggle for burger logic */
+  }
+  
+  .hero-container {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+  
+  .hero-profile {
+    grid-row: 1; /* Shifts avatar profile stack to top window prioritization */
+  }
+  
+  .tools-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  
+  .contact-asymmetric-stack {
+    padding-right: 0;
+  }
+}
